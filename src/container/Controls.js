@@ -5,6 +5,11 @@ import { hendleStartPause, hendleReset } from '../redux/actions';
 
 import { Controls } from "../presentational/Controls";
 
+const mapStateToProps = state => {
+    return {
+        working: state.working
+    }
+}
 const mapDispatchToProps = dispatch => {
     return {
         onClickStartPause: function(){
@@ -22,13 +27,13 @@ class ControlsContainer extends Component {
     
 
     render(){
-        const { onClickReset, onClickStartPause} = this.props;
+        const { onClickReset, onClickStartPause, working} = this.props;
         
         return (
-            <Controls onClickReset={onClickReset} onClickStartPause={onClickStartPause}/>
+            <Controls onClickReset={onClickReset} onClickStartPause={onClickStartPause} working={working}/>
         )
     }
 
 }
 
-export default connect(null, mapDispatchToProps)(ControlsContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(ControlsContainer);

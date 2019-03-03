@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import { connect } from "react-redux";
 
 import { hendleBreakDecrease, hendleBreakIncrease } from '../redux/actions';
-import { Break } from "../presentational/Break";
+import { Buttons } from "../presentational/Buttons";
 
 const mapDispatchToProps = dispatch => {
     return {
@@ -25,7 +25,7 @@ class BreakContainer extends Component  {
     render() {
         const {onClickDecrease, onClickIncrease, breakLength} = this.props;
         return (
-    <Break onClickDecrease={onClickDecrease} onClickIncrease={onClickIncrease} length={breakLength}/>
+             <Buttons onClickDecrease={onClickDecrease} onClickIncrease={onClickIncrease} length={breakLength} title={"Break Length"}/>
         )
     }
 }

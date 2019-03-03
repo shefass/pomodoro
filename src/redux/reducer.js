@@ -1,9 +1,9 @@
 const defaultState = {
-  breakLength: 1,
-  sesionLength: 1,
-  clockTimeMinutes: 1,
+  breakLength: 5,
+  sesionLength: 25,
+  clockTimeMinutes: 25,
   clockTimeSeconds: 0,
-  breakTimeMinutes: 1,
+  breakTimeMinutes: 5,
   breakTimeSeconds: 0,
   working: false,
   showClock: true,
@@ -13,7 +13,7 @@ const defaultState = {
 export const reducer = (state = defaultState, action) => {
   switch (action.type) {
     case "breakdecrease":
-      if (state.breakLength > 1) {
+      if (state.breakLength > 1 && state.breakTimeMinutes > 0) {
         return {
           ...state,
           breakLength: state.breakLength - 1,
@@ -34,7 +34,7 @@ export const reducer = (state = defaultState, action) => {
         return { ...state };
       }
     case "sesiondecrease":
-      if (state.sesionLength > 1) {
+      if (state.sesionLength > 1 && state.clockTimeMinutes > 0) {
         return {
           ...state,
           sesionLength: state.sesionLength - 1,

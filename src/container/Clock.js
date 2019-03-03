@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import { Clock } from "../presentational/Clock";
+import { Segment } from "semantic-ui-react";
+
 
 const mapStateToProps = state => {
   if (state.showBreak) {
@@ -22,11 +24,13 @@ class ClockContainer extends Component {
     const name = ["Clock", "Break"];
     const { minutes, seconds, showBreak } = this.props;
     return (
+  
       <Clock
         minutes={minutes < 10 ? "0" + minutes : minutes}
         seconds={seconds < 10 ? "0" + seconds : seconds}
         name={showBreak ? name[1] : name[0]}
       />
+    
     );
   }
 }

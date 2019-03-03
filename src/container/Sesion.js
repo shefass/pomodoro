@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 import { hendleSesionDecrease, hendleSesionIncrease } from '../redux/actions';
 
-import { Sesion } from "../presentational/Sesion";
+import { Buttons } from "../presentational/Buttons";
 
 const mapDispatchToProps = dispatch => {
     return {
@@ -26,7 +26,7 @@ class SesionContainer extends Component {
     render(){
         const {onClickDecrease, onClickIncrease, sesionLength} = this.props;
         return (
-            <Sesion onClickDecrease={onClickDecrease} onClickIncrease={onClickIncrease} length={sesionLength} />
+            <Buttons onClickDecrease={onClickDecrease} onClickIncrease={onClickIncrease} length={sesionLength} title={"Sesion Length"}/>
         )
     }
 
