@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./App.css";
 import { Layout } from "./presentational/Layout";
 import { reducer } from "./redux/reducer";
 import { createStore, applyMiddleware } from "redux";

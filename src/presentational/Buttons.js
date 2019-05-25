@@ -1,17 +1,5 @@
 import React from "react";
-import {
-  Button,
-  Container,
-  Divider,
-  Grid,
-  Header,
-  Image,
-  List,
-  Segment,
-  Label,
-  Responsive,
-  Transition
-} from "semantic-ui-react";
+import { Button, Header, Segment } from "semantic-ui-react";
 
 export const Buttons = ({
   length,
@@ -25,7 +13,7 @@ export const Buttons = ({
       <Button.Content visible>Decrease</Button.Content>
       <Button.Content hidden>Min 1 min</Button.Content>
     </Button>
-    <span style={{fontSize: "1.5em"}}>{length + " "}</span>
+    <span style={{ fontSize: "1.5em" }}>{length + " "}</span>
     <Button color="grey" onClick={onClickIncrease} animated>
       <Button.Content visible>Increase</Button.Content>
       <Button.Content hidden>Max 60 min</Button.Content>
